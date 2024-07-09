@@ -49,8 +49,6 @@ RasterizeGaussiansCUDA(
 	const float tan_fovy,
     const int image_height,
     const int image_width,
-    const int num_color_channels,
-    const int num_features_channels,
 	const torch::Tensor& sh,
 	const int degree,
 	const torch::Tensor& campos,
@@ -63,9 +61,7 @@ RasterizeGaussiansCUDA(
   }
   const int P = means3D.size(0);
   const int H = image_height;
-  const int W = image_width;
-  const int NUM_COLOR_CHANNELS = num_color_channels;
-  const int NUM_FEATURE_CHANNELS = num_features_channels;
+  const int W = image_width;  
 
   auto int_opts = means3D.options().dtype(torch::kInt32);
   auto float_opts = means3D.options().dtype(torch::kFloat32);
