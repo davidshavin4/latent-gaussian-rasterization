@@ -32,8 +32,6 @@ RasterizeGaussiansCUDA(
 	const float tan_fovy,
     const int image_height,
     const int image_width,
-    const int num_color_channels,
-    const int num_features_channels,
 	const torch::Tensor& sh,
 	const int degree,
 	const torch::Tensor& campos,
